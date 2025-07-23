@@ -3,6 +3,7 @@
   fetchFromGitHub,
   lib,
   hatchling,
+  pythonRelaxDepsHook,
   alive-progress,
   click,
   pygithub,
@@ -12,13 +13,13 @@
 }:
 buildPythonPackage rec {
   pname = "oss_stats";
-  version = "0.1.0";
+  version = "0.1.1";
   pyproject = true;
   src = fetchFromGitHub {
     owner = "acmcsufoss";
     repo = "oss_stats";
     rev = "v${version}";
-    hash = "sha256-j+f2M2C87Lt5ySkvGuqKI4WSMEqG2/GkwGCuU4b+lcM=";
+    hash = "sha256-cbOBN1fEhhxvJvmV+5jYsd9mc4ETj3YUGvrzRCAWSIg=";
   };
 
   build-system = [
@@ -26,6 +27,18 @@ buildPythonPackage rec {
   ];
 
   # NOTE: Might be better to use uv2nix at some point, but this is simpler
+  nativeBuildInputs = [
+    pythonRelaxDepsHook
+  ];
+
+  pythonRelaxDeps = [
+    "alive-progress"
+    "click"
+    "pygithub"
+    "python-dotenv"
+    "rich"
+  ];
+
   dependencies = [
     alive-progress
     click
