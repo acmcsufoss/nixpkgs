@@ -1,8 +1,14 @@
 {
   buildPythonPackage,
   fetchFromGitHub,
-  hatchling,
   lib,
+  hatchling,
+  alive-progress,
+  click,
+  pygithub,
+  python-dotenv,
+  questionary,
+  rich,
 }:
 buildPythonPackage rec {
   pname = "oss_stats";
@@ -19,7 +25,14 @@ buildPythonPackage rec {
     hatchling
   ];
 
+  # NOTE: Might be better to use uv2nix at some point, but this is simpler
   dependencies = [
+    alive-progress
+    click
+    pygithub
+    python-dotenv
+    questionary
+    rich
   ];
 
   meta = with lib; {
@@ -30,4 +43,3 @@ buildPythonPackage rec {
     mainProgram = "oss_stats";
   };
 }
-
