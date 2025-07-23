@@ -18,7 +18,7 @@ buildPythonPackage rec {
     owner = "acmcsufoss";
     repo = "oss_stats";
     rev = "v${version}";
-    hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+    hash = "sha256-j+f2M2C87Lt5ySkvGuqKI4WSMEqG2/GkwGCuU4b+lcM=";
   };
 
   build-system = [
