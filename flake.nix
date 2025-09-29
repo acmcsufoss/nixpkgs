@@ -1,5 +1,6 @@
 {
-  description = "A basic flake with a shell";
+  description = "ACM@CSUF's Nix package definitions";
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     systems.url = "github:nix-systems/default";
@@ -28,7 +29,6 @@
           inherit pkgs;
           inherit (inputs) api-acmcsuf;
         };
-
         # ---- Our Libraries ----
         # acmcsuf-lib = import ./lib {lib = pkgs.lib;};
       in {
