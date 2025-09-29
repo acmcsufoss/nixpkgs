@@ -12,14 +12,14 @@
   rich,
 }:
 buildPythonPackage rec {
-  pname = "oss_stats";
-  version = "0.1.1";
+  pname = "oss-stats";
+  version = "0.2.0";
   pyproject = true;
   src = fetchFromGitHub {
     owner = "acmcsufoss";
-    repo = "oss_stats";
+    repo = "oss-stats";
     rev = "v${version}";
-    hash = "sha256-cbOBN1fEhhxvJvmV+5jYsd9mc4ETj3YUGvrzRCAWSIg=";
+    hash = "sha256-3N703BWvu6ExHDAzktZ6qaAuxr22TsGWLdQnl5Hx8p0=";
   };
 
   build-system = [
@@ -50,9 +50,9 @@ buildPythonPackage rec {
 
   meta = with lib; {
     description = "";
-    homepage = "https://github.com/acmcsufoss/oss_stats";
+    homepage = "https://github.com/acmcsufoss/oss-stats";
     license = licenses.mit;
     maintainers = with maintainers; [TheJolman];
-    mainProgram = "oss_stats";
+    mainProgram = "oss-stats";
   };
 }
